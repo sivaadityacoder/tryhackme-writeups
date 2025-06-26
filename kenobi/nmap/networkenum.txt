@@ -1,0 +1,27 @@
+# Nmap 7.95 scan initiated Wed Jun 25 20:10:52 2025 as: /usr/lib/nmap/nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount -oN networkenum.txt 10.10.200.231
+Nmap scan report for 10.10.200.231
+Host is up (0.46s latency).
+
+PORT    STATE SERVICE
+111/tcp open  rpcbind
+| nfs-ls: Volume /var
+|   access: Read Lookup NoModify NoExtend NoDelete NoExecute
+| PERMISSION  UID  GID  SIZE  TIME                 FILENAME
+| rwxr-xr-x   0    0    4096  2019-09-04T08:53:24  .
+| rwxr-xr-x   0    0    4096  2019-09-04T12:27:33  ..
+| rwxr-xr-x   0    0    4096  2019-09-04T12:09:49  backups
+| rwxr-xr-x   0    0    4096  2019-09-04T10:37:44  cache
+| rwxrwxrwx   0    0    4096  2019-09-04T08:43:56  crash
+| rwxrwsr-x   0    50   4096  2016-04-12T20:14:23  local
+| rwxrwxrwx   0    0    9     2019-09-04T08:41:33  lock
+| rwxrwxr-x   0    108  4096  2019-09-04T10:37:44  log
+| rwxr-xr-x   0    0    4096  2019-01-29T23:27:41  snap
+| rwxr-xr-x   0    0    4096  2019-09-04T08:53:24  www
+|_
+| nfs-statfs: 
+|   Filesystem  1K-blocks  Used       Available  Use%  Maxfilesize  Maxlink
+|_  /var        9204224.0  1836520.0  6877108.0  22%   16.0T        32000
+| nfs-showmount: 
+|_  /var *
+
+# Nmap done at Wed Jun 25 20:11:01 2025 -- 1 IP address (1 host up) scanned in 9.72 seconds
